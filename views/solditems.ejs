@@ -1,0 +1,18 @@
+<%- include("login-partials/header") %>
+    <div class="row_posters" >
+       <% item.forEach(function(data){ %>
+        <div class="row_cards">
+            <img 
+                   class='row_poster'
+
+            src="http://localhost:3000/images/<%=data.image%>">
+             </img>
+             
+            <p><%=data.first_name%></p>
+            <p><%=data.last_name%></p>
+            <p><%=data.price %></p>
+            </div>
+           <% }) %>
+    </div>
+    
+<%- include("partials/footer") %>

@@ -1,0 +1,8 @@
+<% if (ok){ %>
+<%-include("login-partials/header")-%>
+<% } %>
+<% if(!ok) { %>
+<%-include("partials/header")-%>
+<%} %>
+
+<div style="text-align:center;"><h1><%=message%></h1></div>

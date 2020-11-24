@@ -1,0 +1,19 @@
+<%- include("login-partials/header") %>
+<p><%=message %></p>
+<div class="row">
+<% items.forEach(function(data){ %>
+  <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
+   <div class="card" style="width: 18rem;">
+  <img class="card-img-top" src="http://localhost:3000/images/<%=data.image%>" alt="Card image cap">
+  <div  class="card-body">
+    <h6 class="card-text"><%=data.FRUIT_NAME%>(<%=data.last_name%>)</h6>
+    <h6 class="card-text"><%=data.price%> per kg </h6>
+    <a href="/brief/<%=data.id%>" class="btn btn-primary">ADD TO CART</a>
+    <a href="/wishlist/remove/<%= data.id%>" class="btn btn-primary">REMOVE FROM WISHLIST</a>
+  </div>
+			</div>
+		</div>	 
+
+ <%}) %>
+</div>
+<%-include("partials/footer") %>

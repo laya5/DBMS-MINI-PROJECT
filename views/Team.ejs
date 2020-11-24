@@ -1,0 +1,95 @@
+<%-include("partials/header")-%>
+<style>
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+.column {
+  float: left;
+  width: 33.3%;
+  margin-bottom: 16px;
+  padding: 0 8px;
+}
+
+@media screen and (max-width: 650px) {
+  .column {
+    width: 100%;
+    display: block;
+  }
+}
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+.container {
+  padding: 0 16px;
+}
+
+.container::after, .row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.title {
+  color: grey;
+}
+
+
+
+.button:hover {
+  background-color: #555;
+}
+</style>
+
+<div class="row"  style= "margin-top:200px;">
+    <div class="column">
+    <div class="card">
+      <div class="container">
+        <h2>Harsh </h2>
+        <p class="title">185560</p>
+        <p>ER DIAGRAM, DATABASE TABLES, FRONT END</p>
+        <p>185560@nith.ac.in</p>
+      </div>
+    </div>
+  </div>
+  <div class="column">
+    <div class="card">
+      <div class="container">
+        <h2>Bhanu</h2>
+        <p class="title">185559</p>
+        <p>ER DIAGRAMS AND SQL QUERIES</p>
+        <p>185559@nith.ac.in</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="column">
+    <div class="card">
+      <div class="container">
+        <h2>ANKIT GUPTA</h2>
+        <p class="title">185558</p>
+        <p>ER DIAGRAMS</p>
+        <p>185558@nith.ac.in</p>
+      </div>
+    </div>
+  </div>
+  
+  <div class="column">
+    <div class="card">
+  
+      <div class="container">
+        <h2>GUDALA LAYA</h2>
+        <p class="title">185557</p>
+        <p>(Node js and backend integration)</p>
+        <p>185557@nith.ac.in</p>
+      </div>
+    </div>
+  </div>
+</div>
+<%-include("partials/footer")-%>

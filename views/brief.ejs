@@ -1,0 +1,73 @@
+<% if (ok){ %>
+<%-include("login-partials/header")-%>
+<% } %>
+<% if(!ok) { %>
+<%-include("partials/header")-%>
+<%} %>
+<%data.forEach(function(data){%>
+<div style="background-color:#F1EDE3;">
+<div class="row" style="background-color:#F1EDE3;">
+      <div class="col-md-6 mb-4 mb-md-0" >
+        <div class="mdb-lightbox">
+          <div class="row product-gallery mx-1">
+            <div class="col-12 mb-0">
+              <figure class="view overlay rounded z-depth-1 main-img">
+                  <img src="http://localhost:3000/images/<%=data.image%>"
+                    class="img-fluid z-depth-1">
+              </figure>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+  
+        <h4><%=data.first_name%></h4>
+        <p class="mb-2 text-muted text-uppercase small"><%=data.last_name%></p>
+        <p><span class="mr-1"><strong>Rs <%=data.price%> per kg</strong></span></p>
+        <p class="pt-1">here will be the description of the product.It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.</p>
+        <div class="table-responsive"style="padding:1%">
+          <table class="table table-sm table-borderless mb-0">
+            <tbody>
+              <tr>
+                <th class="pl-1 w-25" scope="row"><strong>Quantity Available</strong></th>
+                <td><%=data.quantity%> kg</td>
+              </tr>
+              <tr>
+                <th class="pl-0 w-25" scope="row"><strong>Type:</strong></th>
+                <td><%=data.itemtype%></td>
+              </tr>
+              <tr>
+                <th class="pl-0 w-25" scope="row"><strong>Delivery</strong></th>
+                <td>Only In India</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <hr>
+        <div class="table-responsive mb-2">
+          <table class="table table-sm table-borderless">
+            <tbody>
+              <tr>
+                <form method="post">
+                <label>Quantity:</label>
+                <select type="Number" name="quantity" required>
+                  <option disabled selected value> -- select an option -- </option>
+                   <% for(var i=1;i<=data.quantity;i++) { %>
+                    <option><%= i %></option>
+                    <% } %>
+                </select>
+                <span>kgs</span>
+                <br>
+                     <button type="submit" formaction="/buynow/<%=data.id%>" class="btn btn-primary btn-md mr-1 mb-2" style="padding-right:1%;margin-right:100px;">Buy now</button>
+          <button type="submit" formaction="/cart/add/<%=data.id%>" class="btn btn-light btn-md mr-1 mb-2">ADD TO CART</button>
+               </form>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+<% }) %>
+   

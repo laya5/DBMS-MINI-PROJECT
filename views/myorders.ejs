@@ -1,0 +1,15 @@
+<%-include("login-partials/header") %>
+<% items.forEach(function(data){ %>
+  <div class="jumbotron jumbotron-fluid" style="display:inline-block;border-style:ridge;border-width:5px;border-color: rgb(174, 206, 59);margin-right:20px;">
+  <div class="container">
+    <img src="http://localhost:3000/images/<%=data.image%>"  style="display:inline-block;width:20rem;height:200px;"alternative="<%= data.first_name%>" >
+    <h3 style="font-weight:600;"><%=data.first_name%></h3>
+    <h5  style="font-weight:500;"class="lead">TOTAL PRICE:<%=data.price*data.quantity_needed%>RS</h5>
+   <h5 style="font-weight:500;" class="lead">STATE:<%=data.STATE%></h5>
+   <h5 style="font-weight:500;" class="lead">DATE:<%=data.DATE%></h5>
+   <h5  style="font-weight:500;"class="lead">PRICE PER KG:<%=data.price%> RS</h5>
+   <h5  style="font-weight:500;"class="lead">QUANTITY PURCHASED:<%=data.quantity_needed%> KG</h5>
+  </div>
+</div>
+<% })%>
+<%-include("partials/footer") %>

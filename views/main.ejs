@@ -1,0 +1,36 @@
+<% if (ok){ %>
+<%-include("login-partials/header")-%>
+<% } %>
+<% if(!ok) { %>
+<%-include("partials/header")-%>
+<%} %>
+<div style="margin-bottom:30px;">
+<p>
+  <button class="btn btn-danger category" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+   CATEGORIES <span class="oi oi-cart"></span>
+  </button>
+</p>
+<div class="collapse" id="collapseExample">
+  <div>
+     <a  class="categ"  style="background-color:#e11d74;color:white" href="/categories/f">FRUITS</a>
+     <a class="categ" style="background-color:#206a5d;color:white" href="/categories/v">VEGETABLES</a>
+    <a  class="categ" style="background-color:#fe8a71;color:black" href="/categories/s">SPICES</a>
+    <a class="categ"  style="background-color:#00bdaa;color:black" href="/categories/l">LEAFY VEGETABLES</a>
+  </div>
+</div>
+</div>
+        <p><%= HOME %></p>
+  <% item.forEach(function(data){ %>
+        <div class="card  poster" style="width:20rem;">
+          <a href="/brief/<%=data.id%>">
+  <img  style="width:20rem;height:200px;"  src="http://localhost:3000/images/<%=data.image%>"class="card-img-top product-images" alt="image here"></img>
+</a>
+  <div class="card-body">
+    <h5 class="card-title" style="font-size:1.0rem;"><%=data.first_name%> (<%=data.last_name%>)</h5>
+    <p class="card-text"><%=data.price%></p>
+    <a href="/cart" class="btn btn-primary">GO TO BAG</a>
+    <a href="/wishlist/add/<%= data.id%>" class="btn btn-primary">WISHLIST</a>
+  </div>
+</div>
+   <% }) %>
+   <%-include("partials/footer") %>
